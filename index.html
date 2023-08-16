@@ -6,7 +6,8 @@
 <title>Galeri Gambar</title>
 <style>
    body{
-    background-color: #a20893;
+    transition: background-color 0.5s ease;
+   background-color: #a20893;
     padding: 0;
     margin: 0;
    } 
@@ -147,8 +148,22 @@ nav ul li a{
     color: white;
     font-family: 'Times New Roman', Times, serif;
     text-align: center;
-    margin-top: -35px;
+    margin-top: -250px;
   }
+
+  #changeColorButton {
+            padding: 10px 20px;
+            background-color: #ff00c3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: auto;
+        }
 
 </style>
 </head>
@@ -178,6 +193,16 @@ nav ul li a{
     <div class="center3"></div>
   </div>
 
+  <button id="changeColorButton">Ganti warna</button>
+  <script>
+    const changeColorButton = document.getElementById('changeColorButton');
+    const colors = ['#FF5733', '#33FF57', '#5733FF', '#33A0FF', '#FF33A0', '#a20893'];
+
+    changeColorButton.addEventListener('click', () => {
+        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+        document.body.style.backgroundColor = randomColor;
+    });
+</script>
   <p>Cooming Soon...</p>
 </body>
 </html>
